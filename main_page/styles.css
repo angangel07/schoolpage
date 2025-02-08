@@ -1,0 +1,1009 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #004080;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+.header-content {
+  display: flex;
+  align-items: center; /* Vertically align items */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Distribute space between logo and social links */
+}
+
+.logo-container {
+  width: 100px; /* Adjust as needed */
+  height: 100px; /* Adjust as needed */
+  border-radius: 50%; /* Make it round */
+  overflow: hidden; /* Hide any overflowing image */
+  margin-right: 10px; /* Add space between logo and title */
+}
+
+.logo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Make the image cover the container */
+}
+/*RIGHT SIDE OF THE HEADER */
+.social-links {
+  display: flex;
+  align-items: center;
+}
+
+.social-links a {
+  margin-left: 10px;
+  color: white; /* Or any color you prefer */
+  font-size: 20px; /* Adjust size as needed */
+}
+
+/*FOR RESPONSIVE HEADER*/
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column; /* Stack logo, title, and social links vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text within the header */
+  }
+
+  .logo-container {
+    margin: 10px 0; /* Add margin top and bottom */
+  }
+
+  h1 {
+    font-size: 1.2em; /* Reduce heading size */
+    margin: 10px 0; /* Add margin top and bottom */
+  }
+
+  .social-links {
+    margin-top: 10px; /* Add margin top */
+    justify-content: center; /* Center social links */
+  }
+
+  .social-links a {
+    margin: 0 5px; /* Adjust margin for smaller screens */
+    font-size: 16px; /* Reduce font size */
+  }
+}
+
+/* FOR THE NAV BAR */
+
+nav {
+  position: sticky;
+  top: 0px;
+  background-color: #f0f0f0;
+  padding: 1em;
+  text-align: center;
+  z-index: 5;
+}
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #004080;
+  position: relative; /* Required for positioning the underline */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+nav a::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: -2px; /* Adjust position as needed */
+  height: 2px;
+  background-color: green;
+  transition: all 0.5s ease; /* Smooth transition for width */
+  opacity: 0; /* Initially hidden */
+}
+
+nav a:hover::before {
+  left: 0%;
+  right: 0%; /* Reduce width on hover */
+  opacity: 1;
+}
+
+nav a.active {
+  color: blue;
+}
+.menu-btn {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  position: fixed;
+  top: 1px;
+  left: 4px;
+  z-index: 1100;
+}
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -50%;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+    padding-top: 50px;
+  }
+  .nav-links a {
+    display: block;
+    margin: 15px 0;
+    font-size: 18px;
+  }
+  .nav-open {
+    left: 0;
+  }
+}
+
+/* FOR THE HERO SECTION */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  background-image: url("../img/background/panchayat_background.jpeg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  z-index: 2;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 50px;
+  border-radius: 10px;
+}
+
+.overlay h1 {
+  font-size: 3em;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.overlay h4 {
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn {
+  display: inline-block;
+  background: #0073e6;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background: #005bb5;
+}
+/* FOR THE CONTAINER SECTION*/
+
+.container {
+  margin-top: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  padding-bottom: 40px;
+}
+
+/* FOR THE NEWS SECTION */
+
+#news {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  background: linear-gradient(to top, #e8e8e8, #f9f9f9);
+}
+
+.news-container {
+  display: flex;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 100%;
+  gap: 40px;
+}
+
+.news-header {
+  flex: 1;
+}
+
+.news-header h2 {
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.news-header h2 span {
+  color: black;
+}
+
+.news-header p {
+  margin: 10px 0;
+  color: gray;
+}
+
+.news-btn {
+  background: linear-gradient(45deg, orange, #ff6f00);
+  border: none;
+  padding: 12px 20px;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.news-btn:hover {
+  transform: scale(1.05);
+}
+
+.news-list {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.news-item {
+  background: #f7f7f7;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.3s;
+  cursor: pointer;
+  flex-direction: column;
+  position: relative;
+}
+
+.news-item:hover {
+  background: #ebebeb;
+}
+
+.news-item p {
+  font-weight: bold;
+}
+
+.news-item .category {
+  font-size: 12px;
+  color: orange;
+  align-self: flex-start;
+}
+
+.news-item a {
+  text-decoration: none;
+  font-size: 18px;
+  color: orange;
+  font-weight: bold;
+  align-self: flex-end;
+}
+
+/* Hidden details initially */
+.news-details {
+  max-height: 0;
+  overflow: hidden;
+  background: #eaeaea;
+  padding: 0 10px; /* Initially minimal padding */
+  margin-top: 0;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #333;
+  width: 100%;
+
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out,
+    margin-top 0.3s ease-in-out, opacity 0.3s ease-in-out,
+    /* Add opacity transition */ transform 0.3s ease-in-out;
+}
+
+.news-item.active .news-details {
+  max-height: 200px; /* Set to a value that can accommodate the content */
+  padding: 10px;
+  margin-top: 10px;
+}
+
+/* FOR THE NOTICE SECTION */
+
+#notice {
+  padding: 50px 20px;
+  background: linear-gradient(to bottom, #e8e8e8, #f9f9f9);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#notice h2 {
+  font-weight: 700;
+  font-size: 36px;
+}
+
+.notice-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.notice-item {
+  background: url("your-background-image.jpg") center/cover no-repeat;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+  color: black;
+  text-align: left;
+  transition: 0.3s;
+}
+
+.notice-item h1 {
+  font-size: 50px;
+  color: #2d2d2d;
+  margin-bottom: 10px;
+}
+
+.notice-item h3 {
+  font-size: 22px;
+  font-weight: bold;
+  color: black;
+}
+
+.notice-item p {
+  font-size: 14px;
+  color: gray;
+  margin-top: 10px;
+}
+
+.notice-item a {
+  text-decoration: none;
+  font-weight: bold;
+  color: black;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.notice-item:hover {
+  transform: scale(1.05);
+}
+
+/*FOR THE EVENTS SECTION*/
+#events {
+  padding: 50px 20px;
+  background: linear-gradient(to top, #e8e8e8, #f9f9f9);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: black;
+}
+
+.event-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 900px;
+  margin: auto;
+}
+
+.event-item {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.event-item h3 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.event-item p {
+  color: gray;
+  margin-top: 10px;
+}
+
+.event-date {
+  background: orange;
+  color: white;
+  padding: 5px 15px;
+  display: inline-block;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+.event-images {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.event-images img {
+  width: 170px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.event-images img:hover {
+  transform: scale(1.1);
+}
+
+/* Scrolling Animation */
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+.slide-up.show {
+  opacity: 1;
+  transform: translateY(-10px);
+}
+.zoom-in.show {
+  opacity: 1;
+  transform: scale(1);
+}
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(-20px);
+}
+
+/* See More Button */
+.see-more {
+  background: linear-gradient(45deg, orange, #ff6f00);
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: transform 0.6s ease;
+}
+
+.see-more:hover {
+  transform: scale(1.05);
+}
+
+/* RESOURCES SECTION FORM HERE */
+
+#resources {
+  padding: 40px;
+  background: linear-gradient(to bottom, #e8e8e8, #f9f9f9);
+  overflow: hidden; /* For smooth animations */
+}
+
+#resources h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  color: #222;
+}
+
+/* Grid Layout */
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Responsive columns */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Resource Items */
+.resource-item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.resource-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.resource-item h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* Visible state for resource items */
+.resource-item.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Learn More Button */
+.learn-more {
+  text-align: center;
+  margin-top: 30px;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Moved down initially */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.learn-more.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.learn-more button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.learn-more button:hover {
+  background-color: #0056b3;
+}
+
+/* FOR THE FACULTIES SECTION FORM HERE */
+#faculty {
+  padding: 50px 20px;
+  text-align: center;
+  background: linear-gradient(to top, #e8e8e8, #f9f9f9);
+}
+#faculty h2 {
+  margin-bottom: 10px;
+  font-size: 2em;
+}
+#faculty p {
+  margin-bottom: 30px;
+}
+
+/* ====== Faculty Section Grid ====== */
+.faculty-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+.faculty-box {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  /* initial state for scroll animation */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.faculty-box:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+.faculty-box img {
+  width: 100%;
+  display: block;
+}
+.faculty-summary {
+  padding: 15px;
+  font-size: 16px;
+}
+/* Extra info is hidden by default */
+.faculty-extra {
+  padding: 15px;
+  background: #f9f9f9;
+  display: none;
+  border-top: 1px solid #ddd;
+}
+/* Show extra info when box is “active” (toggled on click) */
+.faculty-box.active .faculty-extra {
+  display: block;
+}
+
+/* ====== Scroll Animation: Visible State ====== */
+.faculty-box.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+  /* transition is already applied */
+}
+
+/* ====== Animation Keyframes ====== */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInTopLeft {
+  from {
+    opacity: 0;
+    transform: translate(-50px, -50px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@keyframes fadeInBottomLeft {
+  from {
+    opacity: 0;
+    transform: translate(-50px, 50px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+/* ====== Directional Animation Classes ====== */
+/* You can assign these classes to each faculty-box to have them appear from different directions */
+.fade-left.visible {
+  animation: fadeInLeft 0.8s forwards;
+}
+.fade-right.visible {
+  animation: fadeInRight 0.8s forwards;
+}
+.fade-up.visible {
+  animation: fadeInUp 0.8s forwards;
+}
+.fade-down.visible {
+  animation: fadeInDown 0.8s forwards;
+}
+.fade-top-left.visible {
+  animation: fadeInTopLeft 0.8s forwards;
+}
+.fade-bottom-left.visible {
+  animation: fadeInBottomLeft 0.8s forwards;
+}
+
+/* ====== More Details Button ====== */
+.more-details {
+  margin-top: 30px;
+  padding: 12px 25px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+.more-details:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* ====== Responsive Design ====== */
+@media (max-width: 768px) {
+  .faculty-section {
+    flex-direction: column;
+    align-items: center;
+  }
+  .faculty-box {
+    width: 90%;
+  }
+}
+
+/*FOR THE SCHOOLARSHIPS SECTION*/
+#scholarships {
+  padding: 50px 20px;
+  background: linear-gradient(to bottom, #e8e8e8, #f9f9f9);
+  text-align: center;
+}
+#scholarships h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+#scholarships p {
+  margin-bottom: 30px;
+}
+
+/* ====== Table Design with Animation ====== */
+table {
+  width: 80%;
+  margin: 30px auto;
+  border-collapse: collapse;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+table.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+table caption {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+table,
+th,
+td {
+  /* Bold table borders */
+  border: 2px solid #333;
+}
+th,
+td {
+  padding: 12px 15px;
+  text-align: center;
+}
+/* Hover effect for table rows: a subtle 3D-like effect */
+tbody tr:hover {
+  background-color: #f2f2f2;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: perspective(500px) translateZ(10px);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* ====== Responsive Design ====== */
+@media (max-width: 768px) {
+  table {
+    width: 100%;
+  }
+}
+
+/*FOR THE RULES SECTIONS*/
+
+#rules {
+  padding: 50px 20px;
+  background: linear-gradient(to top, #e8e8e8, #f9f9f9);
+}
+#rules h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.2em;
+}
+/* ===== Ordered List for Rules ===== */
+.rules-list {
+  list-style-type: decimal;
+  padding-left: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+/* ===== Individual Rule Items ===== */
+.rule-item {
+  background: #fff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  /* Initial hidden state for scroll animation */
+  opacity: 0;
+  transform: translateY(20px);
+  /* 3D perspective for hover effect */
+  transform-style: preserve-3d;
+}
+.rule-item:hover {
+  transform: scale(1.02) rotateX(5deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.rule-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.rule-details {
+  margin-top: 10px;
+  display: none;
+  font-size: 1em;
+  color: #555;
+}
+/* Show details when rule is active */
+.rule-item.active .rule-details {
+  display: block;
+}
+/* ===== Combo Animation for Scroll ===== */
+@keyframes comboFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95) rotate(-5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+.rule-item.visible {
+  animation: comboFadeIn 0.8s forwards;
+}
+/* ===== More Rules Button & Container ===== */
+.more-rules {
+  display: none;
+  margin-top: 20px;
+}
+.more-rules-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+.more-rules-btn:hover {
+  background: #0056b3;
+  transform: scale(1.05);
+}
+/* ===== Responsive Design ===== */
+@media (max-width: 768px) {
+  #rules {
+    padding: 30px 10px;
+  }
+  .rules-list {
+    padding-left: 20px;
+  }
+  .rule-item {
+    padding: 15px;
+  }
+}
+
+footer {
+  position: relative;
+  overflow: hidden;
+  color: white;
+  text-align: center;
+  padding: 2em 1em;
+  /* Animated Gradient Background */
+  background: linear-gradient(45deg, #004080, #003060, #004080);
+  background-size: 300% 300%;
+  animation: gradientAnimation 15s ease infinite;
+  /* Enable 3D perspective for inner elements */
+  perspective: 1000px;
+}
+
+/* ---------- 3D Background Effect (Pseudo-element) ---------- */
+footer::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  /* A subtle radial gradient to give extra depth */
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.1),
+    transparent 70%
+  );
+  transform: rotate(45deg);
+  z-index: 0;
+}
+
+/* ---------- Content Containers ---------- */
+.footer-content,
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+}
+
+/* Flex container for the top footer section */
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2em;
+  transition: transform 0.5s;
+}
+
+/* ---------- Contact Information ---------- */
+.contact-info p {
+  margin: 0.5em 0;
+  font-size: 1.1em;
+}
+
+/* ---------- Contact Us Button ---------- */
+.contact-us button {
+  background-color: #ffcc00;
+  color: #004080;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Button hover effect */
+.contact-us button:hover {
+  background-color: #ffd633;
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+/* ---------- Footer Bottom ---------- */
+.footer-bottom p {
+  margin: 0.2em 0;
+  font-size: 0.9em;
+}
+
+/* ---------- Responsive Adjustments ---------- */
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+  }
+}

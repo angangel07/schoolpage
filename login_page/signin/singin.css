@@ -1,0 +1,210 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f8f9fa;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    width: 80%;
+    max-width: 1000px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Left Section - Form */
+.form-container {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+.logo img {
+    height: 40px; /* Adjust size as needed */
+    margin-right: 10px;
+}
+
+
+.logo i {
+    color: #007bff;
+}
+
+/* Headings */
+h2 {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Input Fields */
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 12px;
+    padding-right: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+.input-field i {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: #888;
+}
+
+/* Error Message */
+.error {
+    color: red;
+    font-size: 14px;
+    display: none;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Social Login */
+.or {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social-btn {
+    border: none;
+    background: #0e4aeed2;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.social-btn:hover {
+    background: #0e4aee;
+}
+
+.signin-text {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.signin-text a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+/* Right Section - Image */
+.image-container {
+    flex: 1;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*FOR CLOSING THE LOGIN PAGE */
+.cross-button {
+    position: fixed; /* Stay in place during scroll */
+    top: 20px; /* Adjust top position as needed */
+    right: 20px; /* Adjust right position as needed */
+    font-size: 24px; /* Adjust size as needed */
+    color: #333; /* Adjust color as needed */
+    text-decoration: none; /* Remove underline from link */
+    z-index: 1000; /* Ensure it's on top of other elements */
+    cursor: pointer; /* Indicate it's clickable */
+}
+
+.cross-button:hover {
+    color: #007bff; /* Change color on hover */
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 90%;
+    }
+    .image-container {
+        height: 200px;
+    }
+}
+
+

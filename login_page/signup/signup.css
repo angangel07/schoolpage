@@ -1,0 +1,265 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Body */
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f8f9fa;
+  }
+  
+  /* Main Container */
+  .container {
+    display: flex;
+    width: 80%;
+    max-width: 1000px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Left Section - Form */
+  .form-container {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.6s ease-out;
+    max-width: 400px;
+    width: 100%;
+  }
+  
+  .logo {
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .logo img {
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  /* Headings */
+  h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  /* Fade In Animation */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Input Groups */
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Labels */
+  label {
+    font-size: 15px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+  }
+  
+  /* Input Field Container */
+  .input-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+  }
+  
+  /* Input & Select Fields */
+  .input-field input,
+  .input-field select {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    background: transparent;
+    transition: background 0.3s ease;
+  }
+  
+  .input-field input:focus,
+  .input-field select:focus {
+    background: #fff;
+  }
+  
+  /* Icon Styling */
+  .input-field i {
+    position: absolute;
+    right: 15px;
+    color: #888;
+    transition: transform 0.3s ease;
+  }
+  
+  /* Select Dropdown Styling */
+  .input-field select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  /* Focus State for Input Container */
+  .input-field:focus-within {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+  }
+  
+  /* Rotate dropdown icon on focus (if used) */
+  .input-field select:focus + .dropdown-icon {
+    transform: rotate(180deg);
+  }
+  
+  /* Button (Submit) */
+  button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    background: #0056b3;
+    transform: translateY(-2px);
+  }
+  
+  /* Social Login Section */
+  .or {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .social-login {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .social-btn {
+    background: #0e4aeed2;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
+  
+  .social-btn:hover {
+    background: #0e4aee;
+    transform: scale(1.1);
+  }
+  
+  /* Sign In Text */
+  .signin-text {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .signin-text a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .signin-text a:hover {
+    color: #0056b3;
+  }
+  
+  /* Error Message */
+  .error {
+    color: red;
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 10px;
+    display: none;
+  }
+  
+  /* Right Section - Image */
+  .image-container {
+    flex: 1;
+    background: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Close Button */
+  .cross-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    z-index: 1000;
+    cursor: pointer;
+  }
+  
+  .cross-button:hover {
+    color: #007bff;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      width: 90%;
+    }
+    .image-container {
+      height: 200px;
+    }
+  }
+  
