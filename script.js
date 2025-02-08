@@ -11,6 +11,7 @@ if (menuBtn && navLinks) { // Only add this code if you have a menu button and l
 }
 
 
+
 const navItems = document.querySelectorAll("nav a");
 
 navItems.forEach((link) => {
@@ -37,7 +38,24 @@ navItems.forEach((link) => {
     });
 });
 
-
+//FOR THE ABOUT US SECTION
+document.addEventListener("DOMContentLoaded", function () {
+  const observerOptions = {
+      root: null,
+      threshold: 0.2,
+  };
+  
+  const revealOnScroll = (entries, observer) => {
+      entries.forEach(entry => {
+          if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+          }
+      });
+  };
+  
+  const observer = new IntersectionObserver(revealOnScroll, observerOptions);
+  document.querySelectorAll(".about-text, .about-image-container").forEach(el => observer.observe(el));
+});
 
 // FOR THE NEWS ITEMS HIDE AND SEEK
 function toggleNews(element) {
