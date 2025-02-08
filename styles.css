@@ -116,9 +116,8 @@ nav a.active {
   cursor: pointer;
   background: none;
   border: none;
-  position: fixed;
-  top: 1px;
-  left: 4px;
+  position: sticky;
+  top: 2px;
   z-index: 1100;
 }
 @media (max-width: 768px) {
