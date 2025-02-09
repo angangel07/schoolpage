@@ -678,7 +678,7 @@ nav a.active {
 .faculty-box {
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   width: 300px;
   overflow: hidden;
   cursor: pointer;
@@ -689,7 +689,7 @@ nav a.active {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .faculty-box:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
   transform: scale(1.02);
 }
 .faculty-box img {
