@@ -1,42 +1,58 @@
-const menuBtn = document.getElementById('menuBtn'); // If you have a menu button
-const navLinks = document.getElementById('navLinks'); // If you have a menu (for small screens)
+const menuBtn = document.getElementById('menuBtn'); // Menu button element
+const navLinks = document.getElementById('navLinks');   // Navigation links container
 
-if (menuBtn && navLinks) { // Only add this code if you have a menu button and links
-    menuBtn.addEventListener('click', () => {
-        navLinks.classList.toggle('nav-open');
-        menuBtn.innerHTML = navLinks.classList.contains('nav-open')
-            ? '<i class="fas fa-times"></i>'
-            : '<i class="fas fa-bars"></i>';
-    });
+if (menuBtn && navLinks) { // Only add if both elements exist
+  menuBtn.addEventListener('click', (e) => {
+    // Prevent the click from propagating to the document listener
+    e.stopPropagation();
+    navLinks.classList.toggle('nav-open');
+    menuBtn.innerHTML = navLinks.classList.contains('nav-open')
+      ? '<i class="fas fa-times"></i>'
+      : '<i class="fas fa-bars"></i>';
+  });
 }
-
-
 
 const navItems = document.querySelectorAll("nav a");
 
 navItems.forEach((link) => {
-    link.addEventListener("click", function (event) {
-        event.preventDefault();
+  link.addEventListener("click", function (event) {
+    event.preventDefault();
 
-        navItems.forEach((otherLink) => otherLink.classList.remove("active"));
-        this.classList.add("active");
+    // Set active class on clicked link
+    navItems.forEach((otherLink) => otherLink.classList.remove("active"));
+    this.classList.add("active");
 
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
 
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop,
-                behavior: 'smooth'
-            });
-        }
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop,
+        behavior: 'smooth'
+      });
+    }
 
-        if (navLinks && menuBtn) { // Close the menu on smaller screens after a link is clicked
-            navLinks.classList.remove('nav-open');
-            menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-        }
-    });
+    // Close the menu after clicking a nav link
+    if (navLinks && menuBtn) {
+      navLinks.classList.remove('nav-open');
+      menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+  });
 });
+
+// New: Close the menu if a click occurs outside of navLinks and menuBtn
+document.addEventListener('click', function (event) {
+  // Check if the menu is open and the click target is outside navLinks and the menu button
+  if (
+    navLinks.classList.contains('nav-open') &&
+    !navLinks.contains(event.target) &&
+    !menuBtn.contains(event.target)
+  ) {
+    navLinks.classList.remove('nav-open');
+    menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+  }
+});
+
 
 //FOR THE ABOUT US SECTION
 document.addEventListener("DOMContentLoaded", function () {
@@ -157,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
 }); 
 
 
-// FOR THE SCHOOLARSHIPS SECTIONS 
+// FOR THE SCHOLARSHIPS SECTION
 document.addEventListener("DOMContentLoaded", function () {
   const observerOptions = {
     threshold: 0.1,

@@ -11,13 +11,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
+    overflow-y: auto; 
     background: #f8f9fa;
+    padding-top: 20px;
   }
   
   /* Main Container */
   .container {
     display: flex;
+    flex-direction: column; 
     width: 80%;
     max-width: 1000px;
     background: #fff;
@@ -32,7 +35,7 @@
     padding: 40px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
