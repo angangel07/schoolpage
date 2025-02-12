@@ -116,7 +116,7 @@ nav a.active {
   cursor: pointer;
   background: none;
   border: none;
-  position: sticky;
+  position: fixed;
   top: 1px;
   left: 4px;
   z-index: 1100;
@@ -248,7 +248,7 @@ nav a.active {
   height: auto;
   border-radius: 10px;
 }
-.visible {
+.about-visible {
   opacity: 1 !important;
   transform: translateX(0) !important;
 }
@@ -653,7 +653,6 @@ nav a.active {
 .learn-more button:hover {
   background-color: #0056b3;
 }
-
 /* FOR THE FACULTIES SECTION FORM HERE */
 #faculty {
   padding: 50px 20px;
@@ -678,7 +677,7 @@ nav a.active {
 .faculty-box {
   background: #fff;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 300px;
   overflow: hidden;
   cursor: pointer;
@@ -689,7 +688,7 @@ nav a.active {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .faculty-box:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   transform: scale(1.02);
 }
 .faculty-box img {
@@ -862,7 +861,7 @@ table {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-table.visible {
+.scholarship-visible{
   opacity: 1;
   transform: translateY(0);
 }

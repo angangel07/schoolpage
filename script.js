@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const revealOnScroll = (entries, observer) => {
       entries.forEach(entry => {
           if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
+              entry.target.classList.add("about-visible");
           }
       });
   };
@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", function () {
       (entries, tableObserver) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
+            entry.target.classList.add("scholarship-visible");
             tableObserver.unobserve(entry.target);
           }
         });
@@ -196,6 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
     tableObserver.observe(scholarshipTable);
   }
 });
+
 
 // FOR THE RULSE SECTION 
 document.addEventListener("DOMContentLoaded", function () {
