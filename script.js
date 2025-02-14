@@ -54,6 +54,7 @@ document.addEventListener('click', function (event) {
 });
 
 
+
 //FOR THE ABOUT US SECTION
 document.addEventListener("DOMContentLoaded", function () {
   const observerOptions = {

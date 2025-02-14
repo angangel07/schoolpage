@@ -116,7 +116,7 @@ nav a.active {
   cursor: pointer;
   background: none;
   border: none;
-  position: fixed;
+  position: sticky;
   top: 1px;
   left: 4px;
   z-index: 1100;
