@@ -20,7 +20,7 @@
   /* Main Container */
   .container {
     display: flex;
-    flex-direction: column; 
+    flex-direction: row; 
     width: 80%;
     max-width: 1000px;
     background: #fff;
