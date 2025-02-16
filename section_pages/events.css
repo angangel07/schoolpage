@@ -1,0 +1,173 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  header {
+    background-color: #004080;
+    color: white;
+    text-align: center;
+    padding: 1em;
+  }
+  .header-content {
+    display: flex;
+    align-items: center; /* Vertically align items */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribute space between logo and social links */
+  }
+  
+  .logo-container {
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    border-radius: 50%; /* Make it round */
+    overflow: hidden; /* Hide any overflowing image */
+    margin-right: 10px; /* Add space between logo and title */
+  }
+  
+  .logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Make the image cover the container */
+  }
+  /*RIGHT SIDE OF THE HEADER */
+  .social-links {
+    display: flex;
+    align-items: center;
+  }
+  
+  .social-links a {
+    margin-left: 10px;
+    color: white; /* Or any color you prefer */
+    font-size: 20px; /* Adjust size as needed */
+  }
+  
+  /*FOR RESPONSIVE HEADER*/
+  @media (max-width: 768px) {
+    .header-content {
+      flex-direction: column; /* Stack logo, title, and social links vertically */
+      align-items: center; /* Center items horizontally */
+      text-align: center; /* Center text within the header */
+    }
+  
+    .logo-container {
+      margin: 10px 0; /* Add margin top and bottom */
+    }
+  
+    h1 {
+      font-size: 1.2em; /* Reduce heading size */
+      margin: 10px 0; /* Add margin top and bottom */
+    }
+  
+    .social-links {
+      margin-top: 10px; /* Add margin top */
+      justify-content: center; /* Center social links */
+    }
+  
+    .social-links a {
+      margin: 0 5px; /* Adjust margin for smaller screens */
+      font-size: 16px; /* Reduce font size */
+    }
+  }
+  
+
+  /*FOR THE MAIN GALLERY/EVENTS PAGE*/
+
+
+  h1 {
+    text-align: center;
+    margin: 40px 0 20px;
+    font-size: 2rem;
+    letter-spacing: 1px;
+  }
+
+  /* Gallery Container */
+  .gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+  }
+
+  /* Responsive Grid Layout */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 20px;
+  }
+
+  /* Individual Gallery Item */
+  .gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 5px;
+    background: #ddd;
+    /* Fade-in animation on load */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s forwards;
+  }
+  /* If you want a staggered fade-in, you can add different animation delays to each item */
+
+  /* Gallery Image */
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  /* Hover Animation: Zoom in the image slightly */
+  .gallery-item:hover img {
+    transform: scale(1.1);
+  }
+
+  /* Text Overlay */
+  .gallery-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.4s ease;
+    transform: translateY(100%);
+  }
+
+  /* Reveal overlay on hover */
+  .gallery-item:hover .gallery-info {
+    transform: translateY(0);
+  }
+
+  /* 3D-like box-shadow or "lift" on hover (optional) */
+  .gallery-item {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .gallery-item:hover {
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+    transform: translateY(-3px);
+  }
+
+  /* Keyframe for fade-in animation */
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive Headings & Spacing (Optional) */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.5rem;
+      margin: 20px 0;
+    }
+  }
