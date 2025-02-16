@@ -161,6 +161,7 @@
     transition: opacity 0.5s ease, transform 0.5s ease;
     margin: 5px 0 0 0;
     font-size: 0.9em;
+    line-height: 1.5;
   }
   /* Reveal extra details on hover */
   .photo-container:hover .news-details {
