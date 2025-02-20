@@ -1,140 +1,146 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
+header {
+  background-color: #004080;
+  color: white;
+  text-align: center;
+  padding: 1em;
+}
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Distribute space between logo and social links */
+}
 
-  header {
-    background-color: #004080;
-    color: white;
-    text-align: center;
-    padding: 1em;
-  }
+.logo-container {
+  width: 100px; /* Adjust as needed */
+  height: 100px; /* Adjust as needed */
+  border-radius: 50%; /* Make it round */
+  overflow: hidden; /* Hide any overflowing image */
+  margin-right: 10px; /* Add space between logo and title */
+}
+
+.logo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Make the image cover the container */
+}
+/*RIGHT SIDE OF THE HEADER */
+.social-links {
+  display: flex;
+  align-items: center;
+}
+
+.social-links a {
+  margin-left: 10px;
+  color: white; /* Or any color you prefer */
+  font-size: 20px; /* Adjust size as needed */
+}
+
+/*FOR RESPONSIVE HEADER*/
+@media (max-width: 768px) {
   .header-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Distribute space between logo and social links */
+    flex-direction: column; /* Stack logo, title, and social links vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text within the header */
   }
-  
-  
-  .logo-container {
-    width: 100px; /* Adjust as needed */
-    height: 100px; /* Adjust as needed */
-    border-radius: 50%; /* Make it round */
-    overflow: hidden; /* Hide any overflowing image */
-    margin-right: 10px; /* Add space between logo and title */
-  }
-  
-  .logo-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Make the image cover the container */
-  }
-  /*RIGHT SIDE OF THE HEADER */
-  .social-links {
-    display: flex;
-    align-items: center;
-  }
-  
-  .social-links a {
-    margin-left: 10px;
-    color: white; /* Or any color you prefer */
-    font-size: 20px; /* Adjust size as needed */
-  }
-  
-  /*FOR RESPONSIVE HEADER*/
-  @media (max-width: 768px) {
-    .header-content {
-      flex-direction: column; /* Stack logo, title, and social links vertically */
-      align-items: center; /* Center items horizontally */
-      text-align: center; /* Center text within the header */
-    }
-  
-    .logo-container {
-      margin: 10px 0; /* Add margin top and bottom */
-    }
-  
-    h1 {
-      font-size: 1.2em; /* Reduce heading size */
-      margin: 10px 0; /* Add margin top and bottom */
-    }
-  
-    .social-links {
-      margin-top: 10px; /* Add margin top */
-      justify-content: center; /* Center social links */
-    }
-  
-    .social-links a {
-      margin: 0 5px; /* Adjust margin for smaller screens */
-      font-size: 16px; /* Reduce font size */
-    }
-  }
-  
-  /*FOR THE CONTACT US FORMS*/
 
-  .contact-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #c8fb3f;
-    padding: 50px;
+  .logo-container {
+    margin: 10px 0; /* Add margin top and bottom */
+  }
+
+  h1 {
+    font-size: 1.2em; /* Reduce heading size */
+    margin: 10px 0; /* Add margin top and bottom */
+  }
+
+  .social-links {
+    margin-top: 10px; /* Add margin top */
+    justify-content: center; /* Center social links */
+  }
+
+  .social-links a {
+    margin: 0 5px; /* Adjust margin for smaller screens */
+    font-size: 16px; /* Reduce font size */
+  }
+}
+
+/*FOR THE CONTACT US FORMS*/
+
+.contact-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Two gradients are layered together */
+  background: 
+    linear-gradient(60deg, rgba(255, 0, 150, 0.5), rgba(255, 165, 0, 0.5), rgba(255, 255, 0, 0.5)),
+    radial-gradient(circle at center, rgba(0, 200, 255, 0.5), rgba(0, 100, 255, 0.5), rgba(0, 0, 255, 0.5));
+ 
+  /* The gradients together fill the container */
+  background-size: cover;
+  background-blend-mode: multiply;
+  height: 90vh;
+  padding: 50px;
 }
 
 .contact-container {
-    display: flex;
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    max-width: 900px;
-    width: 100%;
+  display: flex;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 100%;
 }
 
 .image-container {
-    flex: 1;
-    background: url('../img/about/aboutus1.jpg') no-repeat center center/cover;
-    border-radius: 10px 0 0 10px;
-    min-height: 300px;
+  flex: 1;
+  background: url("../img/about/aboutus1.jpg") no-repeat center center/cover;
+  border-radius: 10px 0 0 10px;
+  min-height: 300px;
 }
 
-
 .form-container {
-    flex: 1;
-    position: relative;
-    z-index: 2;                   /* Stacks above the image */
-    /* margin-left: -40px;           Overlap the image by 40px (adjust as needed) */
-    background: #fff;
-    border-radius: 0 10px 10px 0; /* Round only right corners */
-    padding: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  position: relative;
+  z-index: 2; /* Stacks above the image */
+  /* margin-left: -40px;           Overlap the image by 40px (adjust as needed) */
+  background: #fff;
+  border-radius: 0 10px 10px 0; /* Round only right corners */
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 .form-container {
-    flex: 1;
-    padding: 20px;
+  flex: 1;
+  padding: 20px;
 }
 
 .form-container h2 {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .form-container label {
-    display: block;
-    margin-top: 10px;
+  display: block;
+  margin-top: 10px;
 }
 
 .form-container input,
 .form-container textarea {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
 .form-container textarea {
-    resize: vertical;
-    min-height: 100px;
+  resize: vertical;
+  min-height: 100px;
 }
 
 /* 3D Hover Effect for the Button */
@@ -152,22 +158,22 @@ body {
 }
 
 .form-container button:hover {
-    background: #0f5ae7;
-    transform: translateY(-2px);
-    box-shadow: 0 6px #444;
+  background: #0f5ae7;
+  transform: translateY(-2px);
+  box-shadow: 0 6px #444;
 }
 
 .form-container button:active {
-    box-shadow: 0 2px #444;
-    transform: translateY(2px);
+  box-shadow: 0 2px #444;
+  transform: translateY(2px);
 }
 
 @media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column;
-    }
-    
-    .image-container {
-        min-height: 200px;
-    }
+  .contact-container {
+    flex-direction: column;
+  }
+
+  .image-container {
+    min-height: 200px;
+  }
 }

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Form with Animated Background</title>
+  <style>
+    /* =============================
+       CONTACT FORM & CONTAINER STYLES
+    ============================= */
+    .contact-section {
+      position: relative; /* Enables absolute positioning for background elements */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 50px;
+      /* Optional: Remove or change if you don't want an extra background color
+      background-color: #c8fb3f; */
+    }
+
+    .contact-container {
+      position: relative;
+      z-index: 2; /* Places this above the animated background */
+      display: flex;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 900px;
+      width: 100%;
+    }
+
+    .image-container {
+      flex: 1;
+      background: url('../img/about/aboutus1.jpg') no-repeat center center/cover;
+      border-radius: 10px 0 0 10px;
+      min-height: 300px;
+    }
+
+    .form-container {
+      flex: 1;
+      background-color: transparent;
+      border-radius: 0 10px 10px 0;
+      padding: 20px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h2 {
+      margin-bottom: 15px;
+    }
+
+    .form-container label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    .form-container input,
+    .form-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .form-container textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    /* 3D Hover Effect for the Button */
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      background: #1b39b8;
+      color: white;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px #666;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+    }
+
+    .form-container button:hover {
+      background: #0f5ae7;
+      transform: translateY(-2px);
+      box-shadow: 0 6px #444;
+    }
+
+    .form-container button:active {
+      box-shadow: 0 2px #444;
+      transform: translateY(2px);
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+      }
+      
+      .image-container {
+        min-height: 200px;
+      }
+    }
+
+    /* =============================
+       BACKGROUND (HERO) STYLES
+    ============================= */
+    .hero {
+      background-color: #0040C1;
+      position: absolute; /* Fills the entire section */
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Montserrat', sans-serif;
+      z-index: 1; /* Behind the contact container */
+    }
+
+    .cube {
+      position: absolute;
+      top: 80vh;
+      left: 45vw;
+      width: 10px;
+      height: 10px;
+      border: solid 1px #0039a6; /* Replace darken(#0040C1, 8%) with a darker blue */
+      transform-origin: top left;
+      transform: scale(0) rotate(0deg) translate(-50%, -50%);
+      animation: cube 12s ease-in forwards infinite;
+    }
+
+    /* Style for every even cube */
+    .hero .cube:nth-child(2n) {
+      border-color: #0050d1; /* Replace lighten(#0040C1, 10%) with a lighter blue */
+    }
+
+    /* Specific Cube Positions & Animation Delays */
+    .hero .cube:nth-child(2) {
+      animation-delay: 2s;
+      left: 25vw;
+      top: 40vh;
+    }
+
+    .hero .cube:nth-child(3) {
+      animation-delay: 4s;
+      left: 75vw;
+      top: 50vh;
+    }
+
+    .hero .cube:nth-child(4) {
+      animation-delay: 6s;
+      left: 90vw;
+      top: 10vh;
+    }
+
+    .hero .cube:nth-child(5) {
+      animation-delay: 8s;
+      left: 10vw;
+      top: 85vh;
+    }
+
+    .hero .cube:nth-child(6) {
+      animation-delay: 10s;
+      left: 50vw;
+      top: 10vh;
+    }
+
+    /* Cube Animation Keyframes */
+    @keyframes cube {
+      from {
+        transform: scale(0) rotate(0deg) translate(-50%, -50%);
+        opacity: 1;
+      }
+      to {
+        transform: scale(20) rotate(960deg) translate(-50%, -50%);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="contact-section">
+    <!-- Animated Background -->
+    <div class="hero">
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+      <div class="cube"></div>
+    </div>
+
+    <!-- Contact Form Container -->
+    <div class="contact-container">
+      <!-- Image Section -->
+      <div class="image-container"></div>
+      
+      <!-- Form Section -->
+      <div class="form-container">
+        <h2>Contact Form</h2>
+        <form>
+          <label>Full Name</label>
+          <input type="text" placeholder="Enter your name">
+          
+          <label>Email</label>
+          <input type="email" placeholder="Enter your email">
+          
+          <label>Comment or Message</label>
+          <textarea placeholder="Enter your message"></textarea>
+          
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
