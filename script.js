@@ -12,6 +12,10 @@ if (menuBtn && navLinks) { // Only add if both elements exist
   });
 }
 
+
+
+
+
 const navItems = document.querySelectorAll("nav a");
 
 navItems.forEach((link) => {
@@ -53,6 +57,60 @@ document.addEventListener('click', function (event) {
   }
 });
 
+// FOR THE PRELOADER 
+const imageUrls = [
+  "././img/logo/shree_panchayat_logo.jpg",
+  "./img/background/panchayat_background.jpeg",
+ "./img/about/aboutus1.jpg",
+ "./img/events/sport1.jpg",
+ "./img/events/sport2.jpg",
+ "./img/events/lecture1.jpg",
+ "./img/resources/e_libary.png",
+ "./img/faculty/science1.png",
+ "./img/faculty/civil1.png",
+ "./img/faculty/law1.png"
+];
+
+const totalImages = imageUrls.length;
+let imagesLoaded = 0;
+
+// 2. Function to update progress bar and text
+function updateProgress() {
+  imagesLoaded++;
+  const percentage = Math.round((imagesLoaded / totalImages) * 100);
+  document.getElementById("progressBar").style.width = percentage + "%";
+  document.getElementById("loadingText").textContent = percentage + "%";
+
+  // 3. Once all images are loaded, hide the preloader and show content
+  if (imagesLoaded === totalImages) {
+    // Optional small delay for a smooth finish
+    setTimeout(() => {
+      // Fade out preloader (using a CSS class)
+      document.getElementById("preloader").classList.add("hidden");
+      // After fade, set display: none
+      setTimeout(() => {
+        document.getElementById("preloader").style.display = "none";
+        document.getElementById("content").style.display = "block";
+      }, 500); // match the transition duration in CSS
+    }, 300);
+  }
+}
+
+// 4. Preload images programmatically
+function preloadImages() {
+  imageUrls.forEach(url => {
+    const img = new Image();
+    // On each successful load or error, we consider the asset "done"
+    img.onload = updateProgress;
+    img.onerror = updateProgress;
+    img.src = url;
+  });
+}
+
+// 5. Start preloading once the DOM is ready
+document.addEventListener("DOMContentLoaded", () => {
+  preloadImages();
+});
 
 
 //FOR THE ABOUT US SECTION
