@@ -1,140 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Create New Account</title>
-    <link rel="stylesheet" href="./signup.css" />
-    <link
-      rel="icon"
-      type="image/png"
-      href="../../img/logo/shree_panchayat_logo.jpg"
-    />
-    <script
-      src="https://kit.fontawesome.com/f1127f5f80.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <div class="container">
-      <!-- Left Section (Form) -->
-      <div class="form-container">
-        <div class="logo">
-          <img
-            src="../../img/logo/shree_panchayat_logo.jpg"
-            alt="Panchayat School"
-          />
-          Shree Panchayat Secondary School
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Create New Account</title>
+  <link rel="stylesheet" href="./signup.css" />
+  <link rel="icon" type="image/png" href="../../img/logo/shree_panchayat_logo.jpg" />
+  <script src="https://kit.fontawesome.com/f1127f5f80.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <div class="container">
+    <!-- Left Section (Form) -->
+    <div class="form-container">
+      <div class="logo">
+        <img src="../../img/logo/shree_panchayat_logo.jpg" alt="Panchayat School" />
+        Shree Panchayat Secondary School
+      </div>
+      <h3>Create New Account</h3>
+
+      <form method="post" action="singup.php" id="loginForm">
+        <div class="input-group">
+          <!-- Full Name -->
+          <label for="name">Full Name</label>
+          <div class="input-field">
+            <input type="text" id="full_name" name="full_name" placeholder="Enter Full Name" required />
+            <i class="fa-solid fa-user-tie"></i>
+          </div>
+
+          <!-- Date of Birth -->
+          <label for="dob">Date of Birth</label>
+          <div class="input-field">
+            <input type="date"  name="date_of_birth" id="date_of_birth" required />
+            <i class="fas fa-calendar-alt"></i>
+          </div>
+
+          <!-- Gender Selection -->
+          <label for="gender">Gender</label>
+          <div class="input-field">
+            <select name="gender" id="gender" required>
+              <option value="" disabled selected>Select Gender</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <label for="number">Number</label>
+          <div class="input-field">
+            <input type="tel" name="phone_number" id="phone_number" placeholder="Enter Contact Number" required />
+            <i class="fas fa-phone"></i>
+          </div>
+
+          <!-- E-mail -->
+          <label for="email">E-mail</label>
+          <div class="input-field">
+            <input type="email" name="email" id="email" placeholder="Enter Email" required />
+            <i class="fas fa-envelope"></i>
+          </div>
         </div>
-        <h3>Create New Account</h3>
 
-        <form id="loginForm">
-          <div class="input-group">
-            <!-- Full Name -->
-            <label for="name">Full Name</label>
-            <div class="input-field">
-              <input type="text" id="name" placeholder="Enter Full Name" required />
-              <i class="fa-solid fa-user-tie"></i>
-            </div>
-
-            <!-- Date of Birth -->
-            <label for="dob">Date of Birth</label>
-            <div class="input-field">
-              <input type="date" id="dob" required />
-              <i class="fas fa-calendar-alt"></i>
-            </div>
-
-            <!-- Gender Selection -->
-            <label for="gender">Gender</label>
-            <div class="input-field">
-              <select id="gender" required>
-                <option value="" disabled selected>Select Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Rather not say</option>
-              </select>
-              <!-- (Optional: you can add a dropdown icon here if desired) -->
-            </div>
-
-            <!-- Contact Number -->
-            <label for="number">Number</label>
-            <div class="input-field">
-              <input type="tel" id="number" placeholder="Enter Contact Number" required />
-              <i class="fas fa-phone"></i>
-            </div>
-
-            <!-- E-mail -->
-            <label for="email">E-mail</label>
-            <div class="input-field">
-              <input type="email" id="email" placeholder="Enter Email" required />
-              <i class="fas fa-envelope"></i>
-            </div>
+        <div class="input-group">
+          <label for="password">Password</label>
+          <div class="input-field">
+            <input type="password" id="password" placeholder="Enter Password" required />
+            <i class="fas fa-eye toggle-password" data-target="password"></i>
           </div>
 
-          <div class="input-group">
-            <!-- Password -->
-            <label for="password">Password</label>
-            <div class="input-field">
-              <input
-                type="password"
-                id="password"
-                placeholder="Enter Password"
-                required
-              />
-              <i class="fas fa-eye toggle-password" data-target="password"></i>
-            </div>
-
-            <!-- Confirm Password -->
-            <label for="confirmPassword">Retype Password</label>
-            <div class="input-field">
-              <input
-                type="password"
-                id="confirmPassword"
-                placeholder="Retype Password"
-                required
-              />
-              <i class="fas fa-eye toggle-password" data-target="confirmPassword"></i>
-            </div>
+          <label for="confirmPassword">Retype Password</label>
+          <div class="input-field">
+            <input type="password" name="password" id="confirmPassword" placeholder="Retype Password" required />
+            <i class="fas fa-eye toggle-password" data-target="confirmPassword"></i>
           </div>
+        </div>
 
-          <p id="errorMessage" class="error"></p>
+        <p id="errorMessage" class="error"></p>
 
-          <button type="submit">Sign Up</button>
+        <button type="submit">Sign Up</button>
 
-          <p class="or">or sign up with</p>
+        <p class="or">or sign up with</p>
 
-          <div class="social-login">
-            <button type="button" class="social-btn">
-              <i class="fab fa-facebook"></i>
-            </button>
-            <button type="button" class="social-btn">
-              <i class="fab fa-google"></i>
-            </button>
-            <button type="button" class="social-btn">
-              <i class="fab fa-apple"></i>
-            </button>
-          </div>
+        <div class="social-login">
+          <button type="button" class="social-btn">
+            <i class="fab fa-facebook"></i>
+          </button>
+          <button type="button" class="social-btn">
+            <i class="fab fa-google"></i>
+          </button>
+          <button type="button" class="social-btn">
+            <i class="fab fa-apple"></i>
+          </button>
+        </div>
 
-          <p class="signin-text">
-            Have an account? <a href="../signin/signin.html">Login</a>
-          </p>
-        </form>
-      </div>
-
-      <!-- Right Section (Image) -->
-      <div class="image-container">
-        <img
-          src="../../img/login_page_img/login_page_right_side.png"
-          alt="Background"
-        />
-      </div>
+        <p class="signin-text">
+          Have an account? <a href="../signin/signin.html">Login</a>
+        </p>
+      </form>
     </div>
 
-    <!-- Close Button -->
-    <a href="../../index.html" class="cross-button" title="Go to Home">
-      <i class="fa-solid fa-xmark"></i>
-    </a>
+    <!-- Right Section (Image) -->
+    <div class="image-container">
+      <img src="../../img/login_page_img/login_page_right_side.png" alt="Background" />
+    </div>
+  </div>
 
-    <script src="signup.js"></script>
-  </body>
+  <!-- Close Button -->
+  <a href="../../index.html" class="cross-button" title="Go to Home">
+    <i class="fa-solid fa-xmark"></i>
+  </a>
+
+  <script src="signup.js"></script>
+</body>
+
 </html>
